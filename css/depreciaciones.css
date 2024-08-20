@@ -276,3 +276,40 @@ button {
     font-size: 12px;
   }
 }
+
+.btn-preguntas-frecuentes {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #041c38;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  background-color: #041c38;
+  font-size: 20px;
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}

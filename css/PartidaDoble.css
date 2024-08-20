@@ -4,11 +4,11 @@ body {
   background-image: url("../imagenes/fondoPD.png");
   margin: 0;
   padding: 0;
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -137,4 +137,41 @@ button:hover {
 .toInfo a {
   color: #5a639c;
   font-weight: bold;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #041c38;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-preguntas-frecuentes {
+  height: 50px;
+  width: 50px;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  background-color: #041c38;
+  font-size: 20px;
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
 }

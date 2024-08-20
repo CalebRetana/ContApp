@@ -7,6 +7,46 @@
   <title>FAQs sobre Depreciación</title>
   <link rel="stylesheet" href="../css/faqs.css">
   <style>
+
+.navbar {
+  width: 100%;
+  background-color: #041c38;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btn-preguntas-frecuentes {
+  height: 50px;
+  width: 50px;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list li {
+  margin: 0;
+}
+
+.nav-list a {
+  background-color: #041c38;
+  font-size: 20px;
+  display: block;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f9;
@@ -66,7 +106,19 @@
 </head>
 
 <body>
-  <div class="container">
+
+  <nav class="navbar" style="margin-top: 20px ;">
+    <ul class="nav-list">
+        <li><a href="../index.html"><img class="btn-preguntas-frecuentes" src="../imagenes/icon.png"></a></li>
+        <li><a href="../html/depreciacion.html">Depreciación</a></li>
+        <li><a href="../html/PartidaDoble.html">Partida Doble</a></li>
+        <li><a href="../html/preguntasFrecuentes.html"><img class="btn-preguntas-frecuentes" src="../imagenes/preguntas.png"></a></li>
+    </ul>
+  </nav>
+
+
+
+  <div class="container" style="margin-top: 150px;">
     <h1>Preguntas Frecuentes sobre la Depreciación</h1>
 
     <div>
