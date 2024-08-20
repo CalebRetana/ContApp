@@ -313,3 +313,26 @@ button {
   color: white;
   text-align: center;
 }
+
+.footer {
+  display: inline;
+  width: 100%;
+  background-color: #041c38;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.piepie {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.piepie p {
+  margin: 0;
+  padding: 0 15px;
+}
