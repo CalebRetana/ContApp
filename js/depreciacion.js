@@ -66,7 +66,7 @@ class Depreciaciones {
     }
 
     validador("si");
-    console.log(this.descripcion);
+
     datosTabla.push({
       year: "0",
       depreciacion: "",
@@ -293,7 +293,11 @@ document.addEventListener("DOMContentLoaded", function () {
 function mostrarDetalle(indice) {
   var modal = document.getElementById("modalTabla2");
   var span = document.getElementsByClassName("close")[0];
+  const tablaInformacion = document
+    .getElementById("tablaInformacion2")
+    .getElementsByTagName("tbody")[0];
 
+  tablaInformacion.innerHTML = "";
   const depreciacion = almacenDepre[indice];
 
   const tablaDepreciacion = document
@@ -320,6 +324,17 @@ function mostrarDetalle(indice) {
     newRow.insertCell(3).textContent = fila.valLibros;
   });
 
+  let anual, mensual, diario;
+
+  anual = info.calculoAnualDepreciacion();
+  mensual = anual / 12;
+  diario = anual / 365;
+
+  const newRow2 = tablaInformacion.insertRow();
+
+  newRow2.insertCell(0).textContent = "$" + anual.toFixed(2);
+  newRow2.insertCell(1).textContent = "$" + mensual.toFixed(2);
+  newRow2.insertCell(2).textContent = "$" + diario.toFixed(2);
   modal.style.display = "block";
 
   span.onclick = function () {
