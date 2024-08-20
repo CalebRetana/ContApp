@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs sobre Depreciación</title>
+  <link rel="stylesheet" href="../css/faqs.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #555;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .faq-title:hover {
+      color: #00796b;
+    }
+
+    .faq-content {
+      display: none;
+      line-height: 1.6;
+      color: #444;
+      margin: 10px 0;
+      padding-left: 20px;
+      border-left: 3px solid #00796b;
+      background: #e0f7fa;
+      border-radius: 4px;
+    }
+
+    .faq-content p {
+      margin: 10px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Preguntas Frecuentes sobre la Depreciación</h1>
+
+    <div>
+      <h2 class="faq-title">¿Cuál es la importancia de la depreciación?</h2>
+      <div class="faq-content">
+        <p>La depreciación es crucial porque permite reflejar el desgaste y la reducción en el valor de un activo a lo
+          largo del tiempo. Esto ayuda a las empresas a calcular de manera precisa sus gastos y la verdadera utilidad
+          neta.</p>
+      </div>
+
+      <h2 class="faq-title">¿Cuál es su importancia a nivel contable?</h2>
+      <div class="faq-content">
+        <p>Desde el punto de vista contable, la depreciación permite asignar el costo de un activo a lo largo de su vida
+          útil, lo que ofrece una representación más precisa de los gastos y activos de una empresa en sus estados
+          financieros.</p>
+      </div>
+
+      <h2 class="faq-title">¿Cómo se calcula la depreciación mensual?</h2>
+      <div class="faq-content">
+        <p>La depreciación mensual se calcula dividiendo la depreciación anual por 12. Por ejemplo, si la depreciación
+          anual de un activo es $1,200, la depreciación mensual sería $100.</p>
+      </div>
+
+      <h2 class="faq-title">¿Cómo se calcula la depreciación diaria?</h2>
+      <div class="faq-content">
+        <p>La depreciación diaria se obtiene dividiendo la depreciación anual por 365 días. Por ejemplo, si la
+          depreciación anual es $1,200, la depreciación diaria sería aproximadamente $3.29.</p>
+      </div>
+
+      <h2 class="faq-title">¿Qué tipos de activos se deprecian?</h2>
+      <div class="faq-content">
+        <p>Se deprecian activos fijos como edificios, maquinaria, equipos, vehículos y software. Estos activos pierden
+          valor con el tiempo debido al uso y desgaste.</p>
+      </div>
+
+      <h2 class="faq-title">¿Qué sucede si el valor residual es mayor que el costo del activo?</h2>
+      <div class="faq-content">
+        <p>Si el valor residual es mayor que el costo del activo, la depreciación no se aplica, ya que el activo no
+          perderá valor según las estimaciones contables.</p>
+      </div>
+
+      <h2 class="faq-title">¿Cuál es el porcentaje máximo de depreciación por tipo de activo según la ley de la renta?
+      </h2>
+      <div class="faq-content">
+        <p>Edificaciones: 5%,<br>
+        Maquinaria: 20%,<br>
+        Vehiculos: 25%,<br>
+        Otros bienes materiales: 50%
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Preguntas Frecuentes sobre la Depreciación.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-title').forEach(item => {
+      item.addEventListener('click', () => {
+        const content = item.nextElementSibling;
+        content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+
+</html>

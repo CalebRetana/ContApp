@@ -1,0 +1,140 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(17, 109, 110);
+  background-image: url("../imagenes/fondoPD.png");
+  margin: 0;
+  padding: 0;
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  width: 100%;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  color: #4a4a4a;
+  width: 1000px;
+  background-color: rgb(230, 209, 205, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 20px;
+  color: #0070c0;
+}
+
+.logo {
+  width: 50px;
+  vertical-align: middle;
+}
+
+.content {
+  display: flex;
+
+  justify-content: center;
+  gap: 2%;
+}
+
+.section {
+  width: 48%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.partida {
+  background-color: rgba(211, 185, 178, 0.8);
+}
+
+.contrapartida {
+  background-color: rgba(211, 185, 178, 0.8);
+}
+
+h2 {
+  margin-top: 0;
+  color: #4a4a4a;
+  text-align: center;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.status {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  color: #4a4a4a;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #4a4a4a;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.solution {
+  background-color: #5a639c;
+  color: white;
+}
+
+.initialize {
+  background-color: #5a639c;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.flexi {
+  display: flex;
+  background-color: rgb(230, 209, 205);
+  color: #4a4a4a;
+  width: 1015px;
+  border-radius: 15px;
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+  margin-top: 1vh;
+}
+
+.toInfo {
+  display: inline;
+  text-align: center;
+  color: black;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+.toInfo a {
+  color: #5a639c;
+  font-weight: bold;
+}

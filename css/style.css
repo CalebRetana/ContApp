@@ -1,0 +1,46 @@
+body,
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100%;
+}
+main {
+  display: flex;
+  height: 100vh;
+}
+.conButon {
+  width: 50%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conButon:nth-child(1) {
+  background-image: url("../imagenes/depreciacion.png");
+}
+
+.conButon:nth-child(2) {
+  background-image: url("../imagenes/partida.png");
+}
+
+h2 {
+  margin: 0 0 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 60px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px 20px;
+  border-radius: 25px;
+}
+
+.conButon :hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}

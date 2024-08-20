@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Partida Doble </title>
+  <link rel="stylesheet" href="../css/PartidaDoble.css">
+</head>
+
+<body>
+  <div class="principal">
+    <div class="container">
+      <div class="content">
+        <div class="section partida">
+          <h2>Debe</h2>
+          <select id="partidaCuenta">
+            <option value="">Selecciona una cuenta</option>
+            <option value="activo">Cuenta de Activo</option>
+            <option value="pasivo">Cuenta de Pasivo</option>
+            <option value="neto">Cuenta de Capital Contable</option>
+            <option value="ingreso">Cuenta de Ingresos</option>
+            <option value="costo">Cuenta de Costos</option>
+            <option value="gastos">Cuenta de Gastos</option>
+          </select>
+          <select id="partidaMovimiento">
+            <option value="">Selecciona un movimiento</option>
+            <option value="aumenta">Aumenta</option>
+            <option value="disminuye">Disminuye</option>
+          </select>
+
+
+          <div id="partidaStatus" class="status"></div>
+        </div>
+
+        <div class="section contrapartida">
+          <h2>Haber</h2>
+          <select id="contrapartidaCuenta">
+            <option value="">Selecciona una cuenta</option>
+            <option value="activo">Cuenta de Activo</option>
+            <option value="pasivo">Cuenta de Pasivo</option>
+            <option value="neto">Cuenta de Capital Contable</option>
+            <option value="ingreso">Cuenta de Ingresos</option>
+            <option value="costo">Cuenta de Costos</option>
+            <option value="gastos">Cuenta de Gastos</option>
+          </select>
+          <select id="contrapartidaMovimiento">
+            <option value="">Selecciona un movimiento</option>
+            <option value="aumenta">Aumenta</option>
+            <option value="disminuye">Disminuye</option>
+          </select>
+
+          <div id="contrapartidaStatus" class="status"></div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="solution" onclick="verificarMovimiento()">Verificar</button>
+        <button class="initialize" onclick="inicializar()">Limpiar</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="flexi">
+    <div class="toInfo">
+      <p>¿Tienes una pregunta? <a href="../html/info.html">click aqui </a></p>
+    </div>
+  </div>
+
+  <script src="../js/PartidaDoble.js"></script>
+</body>
+
+</html>

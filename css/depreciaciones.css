@@ -1,0 +1,278 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(17, 109, 110);
+  background-image: url("../imagenes/fondoD.png");
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+:root {
+  --azul: #365487;
+  --claro: #7597d1;
+  --rosa: #fdfdfd;
+}
+
+.princi {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 18px;
+  padding: 8px;
+  text-align: center;
+}
+
+.section {
+  color: white;
+  margin-left: 10%;
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.partida {
+  background-color: var(--azul);
+}
+
+label,
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.seleccionador {
+  width: 41%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  background-color: var(--rosa);
+  color: var(--azul);
+  border: none;
+}
+
+th {
+  background-color: rgba(54, 84, 135, 0.8);
+  color: white;
+  margin: 20px;
+}
+
+.tabla-container {
+  width: 500px;
+  height: 525px;
+  overflow-y: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input {
+  width: 120px;
+  border-radius: 4px;
+  border: 0.1px solid black;
+}
+
+form select {
+  width: 126px;
+  border-radius: 4px;
+  border: 0.1px solid black;
+}
+
+form label {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+}
+
+button {
+  border: 0.5px solid --rosa;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2vh;
+  justify-content: center;
+  gap: 5%;
+  background-color: rgba(117, 151, 209, 0.8);
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 15px;
+}
+
+.princi {
+  margin-right: auto;
+  margin-left: auto;
+  height: auto;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.depreciation-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexi {
+  display: flex;
+  background-color: rgba(117, 151, 209);
+  color: black;
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 1vh;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+}
+
+.toInfo {
+  display: inline;
+  text-align: center;
+  color: black;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.toInfo a {
+  color: var(--rosa);
+  font-weight: bold;
+}
+
+.w {
+  margin-top: 1vh;
+}
+
+.mostrar-tabla {
+  display: none;
+  color: var(--rosa);
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tabla-container-modal {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 1700px) {
+  .mostrar-tabla {
+    display: inline-block;
+  }
+
+  .tabla-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  form h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  form label {
+    font-size: 12px;
+    width: 80px;
+  }
+
+  form input {
+    font-size: 12px;
+    width: 80px;
+  }
+
+  .seleccionador {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    font-size: 15px;
+  }
+
+  form select {
+    font-size: 10px;
+    width: 86px;
+  }
+
+  form button {
+    width: 150px;
+    font-size: 12px;
+  }
+}

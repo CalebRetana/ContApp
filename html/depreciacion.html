@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depreciación de Activos</title>
+  <link rel="stylesheet" href="../css/depreciaciones.css">
+</head>
+
+<body>
+  <main class="princi">
+    <div class="container">
+      <div class="depreciation-info">
+
+        <form id="depreciationForm" class="section partida">
+          <h1>Depreciador de activos</h1>
+
+          <section>
+            <div>
+              <label for="tipoDeActivo">Tipo de Activo:</label>
+              <select id="tipoDeActivo" required class="seleccionador">
+                <option value="Seleccionar">Seleccionar</option>
+                <option value="Edificaciones">Edificaciones</option>
+                <option value="Maquinaria">Maquinaria</option>
+                <option value="Vehículos">Vehículos</option>
+                <option value="Otros Bienes Muebles">Otros Bienes Muebles</option>
+              </select><br>
+            </div>
+
+            <div>
+              <label for="costo">Costo:</label>
+              <input type="number" min="0" step="0.01" id="costo" required><br>
+            </div>
+
+            <div>
+              <label for="valorResidual">Valor Residual:</label>
+              <input type="number" min="0" step="0.01" id="valorResidual"><br>
+            </div>
+
+            <div>
+              <label for="vidaUtil">Vida Útil (Años):</label>
+              <input type="number" min="0" step="1" id="vidaUtil" required><br>
+            </div>
+
+          </section>
+          <br>
+          <button type="button" onclick="calcularDepreciacion()">Calcular Depreciación</button>
+        </form>
+
+        <div id="mensajeAdvertencia"
+          style="color: rgb(255, 189, 189); display: none; text-align: center; margin-top: 10px;"></div>
+
+
+        <h2>Total Depreciación</h2>
+        <table id="tablaInformacion">
+          <thead>
+            <tr>
+              <th>Anual</th>
+              <th>Mensual</th>
+              <th>Diaria</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <br>
+        <a href="#" id="mostrarTablaLink" class="mostrar-tabla">Mostrar detalle tabla</a>
+      </div>
+
+      <br>
+
+
+      <div class="tabla-container">
+        <table id="tablaDepreciacion">
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Depreciación</th>
+              <th>Depreciación Acumulada</th>
+              <th>Valor en Libros</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <div class="princi w">
+    <div class="toInfo flexi">
+      <p>¿Tienes una pregunta? <a href="../html/infoDepreciacion.html">click aqui </a></p>
+    </div>
+  </div>
+
+  <div id="modalTabla" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Detalle de Depreciación</h2>
+      <div class="tabla-container-modal">
+        <table id="tablaDepreciacionModal">
+          <thead>
+            <tr>
+              <th>Año</th>
+              <th>Depreciación</th>
+              <th>Depreciación Acumulada</th>
+              <th>Valor en Libros</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Aquí puedes duplicar el contenido de la tablaDepreciacion si lo deseas -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/depreciacion.js"></script>
+</body>
+
+</html>
