@@ -36,6 +36,7 @@ class Depreciaciones {
     let depreAcumulada = 0;
     let year = this.valoresRenta(this.tipoActivo);
     const depreciacion = (this.costo - this.valorResidual) / this.vida;
+
     if (
       isNaN(this.costo) ||
       this.costo <= 0 ||
@@ -45,6 +46,10 @@ class Depreciaciones {
       this.valorResidual < 0
     ) {
       validador("Debe llenar correctamente todos los campos necesarios");
+      return;
+    }
+    if (!this.descripcion || this.descripcion.trim() === "") {
+      validador("El valor de descripción no puede estar vacío");
       return;
     }
     if (this.valorResidual > this.costo) {
@@ -59,7 +64,9 @@ class Depreciaciones {
       validador("La vida útil de este tipo de activo debe ser mayor a " + year);
       return;
     }
+
     validador("si");
+    console.log(this.descripcion);
     datosTabla.push({
       year: "0",
       depreciacion: "",
@@ -78,12 +85,15 @@ class Depreciaciones {
         valLibros: "$" + valLibros.toFixed(2),
       });
     }
+
     return datosTabla;
   }
 
   calculoAnualDepreciacion() {
     let year = this.valoresRenta(this.tipoActivo);
+
     const depreciacion = (this.costo - this.valorResidual) / this.vida;
+
     if (this.valorResidual > this.costo) {
       return 0;
     }
@@ -134,7 +144,7 @@ function calcularDepreciacion() {
 
   const datos = dep.calcularDepreciacion();
 
-  if (datos !== null) {
+  if (datos !== null && datos !== undefined && datos !== NaN) {
     almacenDepre.push(dep);
   }
 
@@ -149,15 +159,22 @@ function calcularDepreciacion() {
   const tablaInformacion = document
     .getElementById("tablaInformacion")
     .getElementsByTagName("tbody")[0];
+
   tablaInformacion.innerHTML = "";
+
   let anual, mensual, diario;
+
   anual = dep.calculoAnualDepreciacion();
   mensual = anual / 12;
   diario = anual / 365;
+
   const newRow2 = tablaInformacion.insertRow();
+
   newRow2.insertCell(0).textContent = "$" + anual.toFixed(2);
   newRow2.insertCell(1).textContent = "$" + mensual.toFixed(2);
   newRow2.insertCell(2).textContent = "$" + diario.toFixed(2);
+
+  document.getElementById("depreciationForm").reset();
 }
 
 function validarEntero(event) {
@@ -169,6 +186,7 @@ function validarEntero(event) {
     event.preventDefault();
   }
 }
+
 document.getElementById("vidaUtil").addEventListener("keypress", validarEntero);
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -202,7 +220,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var tablaModal = document
       .getElementById("tablaDepreciacionModal")
       .getElementsByTagName("tbody")[0];
+
     tablaModal.innerHTML = "";
+
     let total = 0;
 
     const filteredData =
@@ -221,15 +241,19 @@ document.addEventListener("DOMContentLoaded", function () {
         );
         total += depreciacion.calculoAnualDepreciacion();
       });
-      total = total.toFixed(2);
+
       var totalizador = document.getElementById("inforTotal");
-      totalizador.innerHTML = "$" + total;
+      totalizador.innerHTML = "$" + total.toFixed(2);
       total = 0;
 
       filteredData.forEach((fila) => {
         let indice = almacenDepre.findIndex(
-          (item) => item.descripcion === fila.descripcion
+          (item) =>
+            item.descripcion === fila.descripcion &&
+            item.costo === fila.costo &&
+            item.vida === fila.vida
         );
+
         let depreciacion = new Depreciaciones(
           fila.descripcion,
           fila.costo,
@@ -242,8 +266,10 @@ document.addEventListener("DOMContentLoaded", function () {
         newRow.insertCell(0).textContent = fila.descripcion;
         newRow.insertCell(1).textContent = fila.tipoActivo;
         newRow.insertCell(2).textContent =
-          depreciacion.calculoAnualDepreciacion();
+          "$" + depreciacion.calculoAnualDepreciacion().toFixed(2);
+
         const link = document.createElement("a");
+
         link.href = "#";
         link.textContent = "Mostrar detalle tabla";
         link.classList.add("mostrar-tabla");
@@ -252,9 +278,14 @@ document.addEventListener("DOMContentLoaded", function () {
         link.onclick = function () {
           mostrarDetalle(indice);
         };
+
         const cell = newRow.insertCell(3);
+
         cell.appendChild(link);
       });
+    } else {
+      var totalizador = document.getElementById("inforTotal");
+      totalizador.innerHTML = "";
     }
   }
 });
@@ -264,10 +295,13 @@ function mostrarDetalle(indice) {
   var span = document.getElementsByClassName("close")[0];
 
   const depreciacion = almacenDepre[indice];
+
   const tablaDepreciacion = document
     .getElementById("tablaDepreciacion")
     .getElementsByTagName("tbody")[0];
+
   tablaDepreciacion.innerHTML = "";
+
   const info = new Depreciaciones(
     depreciacion.descripcion,
     depreciacion.costo,
@@ -275,7 +309,9 @@ function mostrarDetalle(indice) {
     depreciacion.vida,
     depreciacion.tipoActivo
   );
+
   const datos = info.calcularDepreciacion();
+
   datos.forEach((fila) => {
     const newRow = tablaDepreciacion.insertRow();
     newRow.insertCell(0).textContent = fila.year;
