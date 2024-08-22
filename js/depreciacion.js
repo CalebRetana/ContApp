@@ -23,6 +23,12 @@ class Depreciaciones {
       case "Otros Bienes Muebles":
         years = 2;
         break;
+      case "Patentes y Marcas":
+        years = 5;
+        break;
+      case "Software":
+        years = 4;
+        break;
       default:
         break;
     }
@@ -291,6 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function mostrarDetalle(indice) {
+  var porcen = document.getElementById("porcentaje");
   var modal = document.getElementById("modalTabla2");
   var span = document.getElementsByClassName("close")[0];
   const tablaInformacion = document
@@ -335,6 +342,9 @@ function mostrarDetalle(indice) {
   newRow2.insertCell(0).textContent = "$" + anual.toFixed(2);
   newRow2.insertCell(1).textContent = "$" + mensual.toFixed(2);
   newRow2.insertCell(2).textContent = "$" + diario.toFixed(2);
+
+  let porcentaje = (anual / (info.costo - info.valorResidual)) * 100;
+  porcen.innerHTML = porcentaje.toFixed(2) + "%";
   modal.style.display = "block";
 
   span.onclick = function () {

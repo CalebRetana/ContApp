@@ -12,20 +12,21 @@
 
   <nav class="navbar" style="margin-top: 20px ;">
     <ul class="nav-list">
-        <li><a href="../index.html"><img class="btn-preguntas-frecuentes" src="../imagenes/icon.png"></a></li>
-        <li><a href="#">Depreciación</a></li>
-        <li><a href="../html/PartidaDoble.html">Partida Doble</a></li>
-        <li><a href="../html/preguntasFrecuentes.html"><img class="btn-preguntas-frecuentes" src="../imagenes/preguntas.png"></a></li>
+      <li><a href="../index.html"><img class="btn-preguntas-frecuentes" src="../imagenes/icon.png"></a></li>
+      <li><a href="#">Depreciación</a></li>
+      <li><a href="../html/PartidaDoble.html">Partida Doble</a></li>
+      <li><a href="../html/preguntasFrecuentes.html"><img class="btn-preguntas-frecuentes"
+            src="../imagenes/preguntas.png"></a></li>
     </ul>
   </nav>
 
   <main class="princi">
     <div class="container">
       <div class="depreciation-info">
-  
+
         <form id="depreciationForm" class="section partida">
           <h1>Depreciador de activos</h1>
-  
+
           <section>
             <div>
               <label for="tipoDeActivo">Tipo de Activo:</label>
@@ -35,38 +36,41 @@
                 <option value="Maquinaria">Maquinaria</option>
                 <option value="Vehículos">Vehículos</option>
                 <option value="Otros Bienes Muebles">Otros Bienes Muebles</option>
+                <option value="Software">Software</option>
+                <option value="Patentes y Marcas">Patentes y Marcas</option>
+
               </select><br>
             </div>
-  
+
             <div>
               <label for="descripcion">Descripción:</label>
               <input type="text" id="descripcion" required><br>
             </div>
-  
+
             <div>
               <label for="costo">Costo:</label>
               <input type="number" min="0" step="0.01" id="costo" required><br>
             </div>
-  
+
             <div>
               <label for="valorResidual">Valor Residual:</label>
               <input type="number" min="0" step="0.01" id="valorResidual"><br>
             </div>
-  
+
             <div>
               <label for="vidaUtil">Vida Útil (Años):</label>
               <input type="number" min="0" step="1" id="vidaUtil" required><br>
             </div>
-  
+
           </section>
           <br>
           <button type="button" onclick="calcularDepreciacion()">Calcular Depreciación</button>
         </form>
-  
+
         <div id="mensajeAdvertencia"
           style="color: rgb(255, 189, 189); display: none; text-align: center; margin-top: 10px;"></div>
-  
-  
+
+
         <h2>Total Depreciación</h2>
         <table id="tablaInformacion">
           <thead>
@@ -77,21 +81,21 @@
             </tr>
           </thead>
           <tbody>
-  
+
           </tbody>
         </table>
         <br>
         <a href="#" id="mostrarTablaLink" class="mostrar-tabla">Mostrar detalle tabla</a>
       </div>
-  
+
   </main>
-  
+
   <div class="princi w">
     <div class="toInfo flexi">
       <p>¿Tienes una pregunta? <a href="../html/infoDepreciacion.html">click aqui </a></p>
     </div>
   </div>
-  
+
   <div id="modalTabla2" class="modal2">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -107,7 +111,7 @@
             </tr>
           </thead>
           <tbody>
-  
+
           </tbody>
         </table>
       </div>
@@ -122,12 +126,14 @@
           </tr>
         </thead>
         <tbody>
-      
+
         </tbody>
       </table>
+      <br>
+      <h2>Porcentaje de depreciación: <span id="porcentaje"></span></h2>
     </div>
   </div>
-  
+
   <div id="modalTabla" class="modal">
     <div class="modal-content">
       <span class="closes">&times;</span>
@@ -139,6 +145,8 @@
         <option value="Maquinaria">Maquinaria</option>
         <option value="Vehículos">Vehículos</option>
         <option value="Otros Bienes Muebles">Otros Bienes Muebles</option>
+        <option value="Software">Software</option>
+        <option value="Patentes y Marcas">Patentes y Marcas</option>
       </select>
       <div class="tabla-container-modal">
         <table id="tablaDepreciacionModal">
@@ -151,7 +159,7 @@
             </tr>
           </thead>
           <tbody>
-  
+
           </tbody>
         </table>
         <br>
